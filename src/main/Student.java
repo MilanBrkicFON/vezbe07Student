@@ -5,6 +5,9 @@
 
 package main;
 
+import util.Samofinansirajuci;
+import util.Statusi;
+
 /**
  *
  * @author Ilija Antovic
@@ -15,13 +18,15 @@ public class Student {
     String imePrezime;
     int brojESPB;
     int godina;
-
+    Statusi statusStudenta;
+    
     public Student(int indeks, int godinaUpisa, String imePrezime, int brojESPB, int godina) {
         this.indeks = indeks;
         this.godinaUpisa = godinaUpisa;
         this.imePrezime = imePrezime;
         this.brojESPB = brojESPB;
         this.godina = godina;
+        statusStudenta = new Samofinansirajuci(this);
     }
 
 
