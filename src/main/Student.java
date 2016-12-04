@@ -5,8 +5,9 @@
 
 package main;
 
+import util.NeuspesanUpis;
 import util.Samofinansirajuci;
-import util.Statusi;
+import util.Status;
 
 /**
  *
@@ -18,7 +19,7 @@ public class Student {
     String imePrezime;
     int brojESPB;
     int godina;
-    Statusi statusStudenta;
+    Status statusStudenta;
     
     public Student(int indeks, int godinaUpisa, String imePrezime, int brojESPB, int godina) {
         this.indeks = indeks;
@@ -26,23 +27,49 @@ public class Student {
         this.imePrezime = imePrezime;
         this.brojESPB = brojESPB;
         this.godina = godina;
-        statusStudenta = new Samofinansirajuci(this);
+        statusStudenta = new NeuspesanUpis(this);
     }
 
+    public int getBrojESPB() {
+        return brojESPB;
+    }
 
+    public void setBrojESPB(int brojESPB) {
+        this.brojESPB = brojESPB;
+    }
+
+    
+    public int getGodina() {
+        return godina;
+    }
+
+    public void setGodina(int godina) {
+        this.godina = godina;
+    }
+
+    public Status getStatusStudenta() {
+        return statusStudenta;
+    }
+
+    public void setStatusStudenta(Status statusStudenta) {
+        this.statusStudenta = statusStudenta;
+    }
+
+    
 
     public void upisiNarednuGodinu(){
-        if(brojESPB<48){
-            System.out.println("UPIS GODINE: Nemate dovoljno bodova za upis godine!");
-        }
-        if(brojESPB>=48 && brojESPB<60){
-            System.out.println("UPIS GODINE: Upisali ste "+(godina+1)+". godinu kao samofinansirajuci student!\nPlatite XXXXXX dinara!");
-            godina+=1;
-        }
-        if(brojESPB==60){
-            System.out.println("UPIS GODINE: Upisali ste "+(godina+1)+". godinu i bicete finansirani iz budzeta!\nCestitamo!");
-            godina+=1;
-        }
+        statusStudenta.upisiNarednuGodinu();
+//        if(brojESPB<48){
+//            System.out.println("UPIS GODINE: Nemate dovoljno bodova za upis godine!");
+//        }
+//        if(brojESPB>=48 && brojESPB<60){
+//            System.out.println("UPIS GODINE: Upisali ste "+(godina+1)+". godinu kao samofinansirajuci student!\nPlatite XXXXXX dinara!");
+//            godina+=1;
+//        }
+//        if(brojESPB==60){
+//            System.out.println("UPIS GODINE: Upisali ste "+(godina+1)+". godinu i bicete finansirani iz budzeta!\nCestitamo!");
+//            godina+=1;
+//        }
     }
 
     public void poloziIspit(){
@@ -51,14 +78,6 @@ public class Student {
     }
 
     public void prikaziTrenutniStatus(){
-        if(brojESPB<48){
-            System.out.println("STATUS: Obnavlja godinu!");
-        }
-        if(brojESPB>=48 && brojESPB<60){
-            System.out.println("STATUS: Moze upisati narednu godinu kao samofinansirajuci student!");
-        }
-        if(brojESPB==60){
-            System.out.println("STATUS: Moze upisati narednu godinu i bice finansiran iz budzeta!");
-        }
+        statusStudenta.prikaziTrenutniStatus();
     }
 }
