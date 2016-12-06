@@ -17,9 +17,11 @@ public class NeuspesanUpis extends Status{
         super(student);
     }
 
+
+
     @Override
-    public void upisiNarednuGodinu() {
-        if (student.getBrojESPB() >= 48 && student.getBrojESPB()<60) {
+    public void upisiNarednuGodinu(int brojESPB) {
+        if (brojESPB >= 48 && brojESPB<60) {
             student.setStatusStudenta(new Samofinansirajuci(student));
         }else{
             System.out.println("UPIS GODINE: Nemate dovoljno bodova za upis godine!");

@@ -30,6 +30,20 @@ public abstract class Status {
             System.out.println("STATUS: Moze upisati narednu godinu i bice finansiran iz budzeta!");
         }
     }
-    public abstract void upisiNarednuGodinu();
+
+    public abstract void upisiNarednuGodinu(int brojESPB);
+
+    public Status vratiStatus(int brojESPB) {
+        if(brojESPB < 48){
+            return new NeuspesanUpis(student);
+        }
+        if (brojESPB >= 48 && brojESPB<60) {
+            return new Samofinansirajuci(student);
+        }
+        if (brojESPB == 60) {
+            return new Budzet(student);
+        }
+        return null;
+    }
     
 }

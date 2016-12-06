@@ -19,9 +19,11 @@ public class Samofinansirajuci extends Status{
         student.setGodina(student.getGodina()+1);
     }
 
+
+
     @Override
-    public void upisiNarednuGodinu() {
-        if (student.getBrojESPB()==60) {
+    public void upisiNarednuGodinu(int brojESPB) {
+        if (brojESPB==60) {
             student.setStatusStudenta(new Budzet(student));
         }
     }

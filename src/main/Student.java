@@ -27,17 +27,8 @@ public class Student {
         this.imePrezime = imePrezime;
         this.brojESPB = brojESPB;
         this.godina = godina;
-        statusStudenta = new NeuspesanUpis(this);
+        statusStudenta = ShapeFactory.vratiStatusNaOsnovuESPB(this, brojESPB);
     }
-
-    public int getBrojESPB() {
-        return brojESPB;
-    }
-
-    public void setBrojESPB(int brojESPB) {
-        this.brojESPB = brojESPB;
-    }
-
     
     public int getGodina() {
         return godina;
@@ -58,7 +49,7 @@ public class Student {
     
 
     public void upisiNarednuGodinu(){
-        statusStudenta.upisiNarednuGodinu();
+        statusStudenta.upisiNarednuGodinu(brojESPB);
 //        if(brojESPB<48){
 //            System.out.println("UPIS GODINE: Nemate dovoljno bodova za upis godine!");
 //        }

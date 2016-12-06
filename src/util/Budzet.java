@@ -21,12 +21,13 @@ public class Budzet extends Status{
 
     @Override
     public void prikaziTrenutniStatus() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
-    public void upisiNarednuGodinu() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void upisiNarednuGodinu(int brojESPB) {
+        System.out.println("UPIS GODINE: Upisali ste "+(student.getGodina()+1)+". godinu i bicete finansirani iz budzeta!\nCestitamo!");
+        student.setGodina(student.getGodina()+1);
     }
     
 }
