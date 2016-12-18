@@ -15,8 +15,7 @@ public class Samofinansirajuci extends Status{
 
     public Samofinansirajuci(Student student) {
         super(student);
-        System.out.println("UPIS GODINE: Upisali ste "+(student.getGodina()+1)+". godinu kao samofinansirajuci student!\nPlatite XXXXXX dinara!");
-        student.setGodina(student.getGodina()+1);
+        
     }
 
 
@@ -26,6 +25,8 @@ public class Samofinansirajuci extends Status{
         if (brojESPB==60) {
             student.setStatusStudenta(new Budzet(student));
         }
+        System.out.println("UPIS GODINE: Upisali ste "+(student.getGodina()+1)+". godinu kao samofinansirajuci student!\nPlatite XXXXXX dinara!");
+        student.setGodina(student.getGodina()+1);
     }
 
     

@@ -20,13 +20,13 @@ public abstract class Status {
     }
     
     public void prikaziTrenutniStatus(){
-        if(this instanceof NeuspesanUpis){
+        if(student.getStatusStudenta() instanceof NeuspesanUpis){
             System.out.println("STATUS: Obnavlja godinu!");
         }
-        if(this instanceof Samofinansirajuci){
+        if(student.getStatusStudenta() instanceof Samofinansirajuci){
             System.out.println("STATUS: Moze upisati narednu godinu kao samofinansirajuci student!");
         }
-        if(this instanceof Budzet){
+        if(student.getStatusStudenta() instanceof Budzet){
             System.out.println("STATUS: Moze upisati narednu godinu i bice finansiran iz budzeta!");
         }
     }

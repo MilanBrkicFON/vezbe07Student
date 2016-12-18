@@ -17,17 +17,17 @@ import util.Status;
 public class ShapeFactory {
     
     
-    static Status vratiStatusNaOsnovuESPB(Student student, int espb){
-        Status s = null;
-        if (espb < 48) {
-            s = new NeuspesanUpis(student);
+    static Status vratiStatusNaOsnovuESPB(Student student){
+        
+        if (student.brojESPB < 48) {
+            return new NeuspesanUpis(student);
         }
-        if (espb >= 48 && espb<60) {
-            s = new Samofinansirajuci(student);
+        if (student.brojESPB >= 48 && student.brojESPB<60) {
+            return new Samofinansirajuci(student);
         }
-        if (espb == 60) {
-            s = new Budzet(student);
+        if (student.brojESPB == 60) {
+            return new Budzet(student);
         }
-        return s;
+        return null;
     }
 }

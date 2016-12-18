@@ -27,7 +27,7 @@ public class Student {
         this.imePrezime = imePrezime;
         this.brojESPB = brojESPB;
         this.godina = godina;
-        statusStudenta = ShapeFactory.vratiStatusNaOsnovuESPB(this, brojESPB);
+        statusStudenta = ShapeFactory.vratiStatusNaOsnovuESPB(this);
     }
     
     public int getGodina() {
@@ -65,6 +65,7 @@ public class Student {
 
     public void poloziIspit(){
         brojESPB+=6;
+        statusStudenta = ShapeFactory.vratiStatusNaOsnovuESPB(this);
         System.out.println("POLAGANJE ISPITA: Bravo, polozili ste ispit! Trenutni broj ESPB je: "+brojESPB);
     }
 
